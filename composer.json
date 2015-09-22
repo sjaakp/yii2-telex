@@ -1,0 +1,23 @@
+{
+    "name": "sjaakp/yii2-telex",
+    "description": "News scroller widget for Yii",
+    "keywords": ["yii", "yii2", "extension", "widget", "date", "news", "scroller", "ticker"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sjaak Priester",
+            "email": "sjaak@sjaakpriester.nl",
+            "homepage": "http://sjaakpriester.nl"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/telex": "*",
+    },
+    "autoload": {
+        "psr-4": {
+            "sjaakp\\telex\\": ""
+        }
+    }
+}
