@@ -13,15 +13,10 @@ use yii\web\AssetBundle;
 
 class TelexAsset extends AssetBundle {
     public $depends = [
-        'yii\web\JqueryAsset',
+        'yii\jui\JuiAsset',
     ];
 
-//    public $sourcePath = '@bower/telex/dist';
-    public $sourcePath = '@webroot/github/telex/dist';
-
-    public $css = [
-        'telex.css'
-    ];
+    public $sourcePath = '@bower/telex/dist';
 
     public function init()    {
         parent::init();

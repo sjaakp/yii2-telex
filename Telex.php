@@ -14,15 +14,9 @@ use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\Json;
 
-
 class Telex extends Widget {
-    /**
-     * @var array
-     * Initial messages
-     */
-    public $messages = [];
 
-    /**
+   /**
      * @var array
      * Client options for the Telex jQuery widget.
      * @link https://github.com/sjaakp/telex
@@ -43,7 +37,6 @@ class Telex extends Widget {
         else $this->htmlOptions['id'] = $this->getId();
     }
 
-
     public function run()   {
         $view = $this->getView();
 
@@ -58,13 +51,6 @@ class Telex extends Widget {
 
         $view->registerJs($js);
 
-        $msgDivs = array_map(function($v) {
-            if (! isset($v['text'])) return '';
-            $opts = [];
-            if (isset($v['class'])) $opts['class'] = $v['class'];
-            return Html::tag('div', $v['text'], $opts);
-        }, $this->messages);
-
-        echo Html::tag('div', implode("\n", $msgDivs), $this->htmlOptions);
+        echo Html::tag('div', '', $this->htmlOptions);
     }
 }
