@@ -13,7 +13,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/telex": "*",
+        "bower-asset/telex": "*"
     },
     "autoload": {
         "psr-4": {

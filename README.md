@@ -1,7 +1,7 @@
 Yii2-telex
 ==========
 
-#### Widget for Telex news scroller for the Yii2 PHP Framework ####
+#### Telex news scroller widget for the Yii2 PHP Framework ####
 
 Telex widget is a very lightweight widget to render my [Javascript jQuery telex widget](https://github.com/sjaakp/telex).
 
