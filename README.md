@@ -21,6 +21,29 @@ You can manually install **Yii2-telex** by [downloading the source in ZIP-format
 
 ## Using Yii2-telex ##
 
+Use **Yii-telex** in a view like any other widget, like this:
+
+	<?php
+	use sjaakp\telex\Telex;
+	?>
+		... view code ...
+
+        <?= Telex::widget([
+            'options' => [
+                'messages' => [
+					[ 'id' => 'm1', 'content' => 'Initial message'],
+					// ... more messages ...
+				],
+				'duration' => 7500,
+				// ... more options ...	
+            ],
+            'htmlOptions' => [
+                // ...
+            ]
+        ]) ?>
+
+		... more view code ...
+
 
 #### options ####
 
