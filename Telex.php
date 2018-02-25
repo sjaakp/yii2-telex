@@ -25,7 +25,7 @@ class Telex extends Widget {
 
     /**
      * @var array
-     * HTML options of the dateline container.
+     * HTML options of the Telex container.
      * Use this if you want to explicitly set the ID.
      */
     public $htmlOptions = [];
