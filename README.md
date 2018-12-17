@@ -3,7 +3,7 @@ Yii2-telex
 
 #### Telex news scroller widget for the Yii2 PHP Framework ####
 
-Telex widget is a very lightweight widget to render my [Javascript jQuery telex widget](https://github.com/sjaakp/telex).
+Telex widget is a very lightweight widget to render my [Javascript telex widget](https://github.com/sjaakp/telex).
 
 A demonstration of **Yii2-telex** is [here](http://www.sjaakpriester.nl/software/yii2-telex).
 
@@ -21,33 +21,14 @@ You can manually install **Yii2-telex** by [downloading the source in ZIP-format
 
 ## Using Yii2-telex ##
 
-Use **Yii-telex** in a view like any other widget, like this:
-
-	<?php
-	use sjaakp\telex\Telex;
-	?>
-		... view code ...
-
-        <?= Telex::widget([
-            'options' => [
-                'messages' => [
-					[ 'id' => 'm1', 'content' => 'Initial message'],
-					// ... more messages ...
-				],
-				'duration' => 7500,
-				// ... more options ...	
-            ],
-            'htmlOptions' => [
-                // ...
-            ]
-        ]) ?>
-
-		... more view code ...
-
 
 #### options ####
 
 Dateline has the following options:
 
-- **options**: array of options for the underlying telex jQuery widget. More information [here](https://github.com/sjaakp/telex#messages "GitHub").
-- **htmlOptions** (optional): array of HTML options for the Dateline container. Use this if you want to explicitly set the ID. 
+- **messages**: array of messages. These are either `strings`, or `arrays` with the following members:
+	- `content`: the text of the message. May also contain HTML, like a link.
+	- `class` (*optional*): the CSS-class of the message. May be used for styling.
+	- `id` (*optional*): the identifier of the message. For advanced use (see [telex widget](//sjaakpriester.nl/software/telex)).
+- **options**: array of options for the underlying Javascript telex widget. More information [here](https://github.com/sjaakp/telex#messages "GitHub").
+- **htmlOptions** (optional): array of HTML options for the Telex container. Use this if you want to explicitly set the ID. 

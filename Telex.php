@@ -1,34 +1,41 @@
 <?php
 /**
  * MIT licence
- * Version 1.0.1
- * Sjaak Priester, Amsterdam 22-09-2015 ... .
+ * Version 2.0.0
+ * Sjaak Priester, Amsterdam 22-09-2015 ... 17-12-2018.
  *
  * News scroller widget for Yii 2.0 framework
  */
 
 namespace sjaakp\telex;
 
-use yii\base\Widget;
-use yii\base\InvalidConfigException;
+use yii\base\Widget as BaseWidget;
 use yii\helpers\Html;
 use yii\helpers\Json;
 
-class Telex extends Widget {
-
-   /**
-     * @var array
-     * Client options for the Telex jQuery widget.
-     * @link https://github.com/sjaakp/telex
-     */
-    public $options = [];
+class Telex extends BaseWidget   {
 
     /**
      * @var array
-     * HTML options of the Telex container.
-     * Use this if you want to explicitly set the ID.
+     * HTML options of the widget container.
+     * Use this to explicitly set the ID.
      */
     public $htmlOptions = [];
+
+    /**
+     * @var array
+     * JavaScript options of the widget.
+     */
+    public $options = [];
+
+
+    public $messages = [];
+
+    /**
+     * @var array
+     * Default JavaScript options of the widget.
+     */
+    public $defaultOptions = [];
 
     public function init()  {
         if (isset($this->htmlOptions['id'])) {
@@ -38,19 +45,18 @@ class Telex extends Widget {
     }
 
     public function run()   {
+
         $view = $this->getView();
-
-        $asset = new TelexAsset();
-        $asset->register($view);
-
-        $jOpts = count($this->options) ? Json::encode($this->options) : '{}';
+        TelexAsset::register($view);
 
         $id = $this->getId();
+        $var = 'q' . str_replace('-', '_', $id);
 
-        $js = "var {$id}=$('#{$id}').telex($jOpts);";
+        $opts = array_merge($this->defaultOptions, $this->options);
+        $opts = empty($opts) ? '{}' : Json::encode($opts);
+        $msgs = empty($this->messages) ? '[]' : Json::encode($this->messages);
 
-        $view->registerJs($js);
-
+        $view->registerJs("$var=Telex.widget('$id', $opts, $msgs);");
         echo Html::tag('div', '', $this->htmlOptions);
     }
 }
