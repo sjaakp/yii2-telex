@@ -58,9 +58,9 @@ class Telex extends BaseWidget   {
      * @var array of String|array - array of messages.
      * if array of String, they are the messages. May also contain HTML.
      * if array of array, they have the following members:
-    - 'content': the text of the message. May also contain HTML, like a link.
-    - 'class' (optional): the CSS-class of the message. May be used for styling.
-    - 'id' (optional): the identifier of the message.
+     *     - 'content': the text of the message. May also contain HTML, like a link.
+     *     - 'class' (optional): the CSS-class of the message. May be used for styling.
+     *     - 'id' (optional): the identifier of the message.
      */
     public $messages = [];
 
