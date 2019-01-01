@@ -17,5 +17,6 @@ class TelexAsset extends AssetBundle {
         'telex.js'
     ];
 
-    public $sourcePath = '@bower/telex/dist';
+//    public $sourcePath = '@bower/telex/dist';
+    public $baseUrl = '//unpkg.com/@sjaakp/telex/dist';
 }
