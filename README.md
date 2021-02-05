@@ -3,9 +3,13 @@ Yii2-telex 2.1
 
 #### Telex news scroller widget for the Yii2 PHP Framework ####
 
+[![Latest Stable Version](https://poser.pugx.org/sjaakp/yii2-telex/v/stable)](https://packagist.org/packages/sjaakp/yii2-telex)
+[![Total Downloads](https://poser.pugx.org/sjaakp/yii2-telex/downloads)](https://packagist.org/packages/sjaakp/yii2-telex)
+[![License](https://poser.pugx.org/sjaakp/yii2-telex/license)](https://packagist.org/packages/sjaakp/yii2-telex)
+
 Telex widget is a widget to render my [Javascript telex widget](https://github.com/sjaakp/telex). It displays horizontal scrolling news messages, traffic information, stock quotes, and the like, provided by a Yii2 `DataProvider`.
 
-A demonstration of **Yii2-telex** is [here](http://www.sjaakpriester.nl/software/yii2-telex).
+A demonstration of **Yii2-telex** is [here](https://sjaakpriester.nl/software/yii2-telex).
 
 ## Installation ##
 
