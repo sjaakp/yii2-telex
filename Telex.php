@@ -67,13 +67,21 @@ class Telex extends BaseWidget   {
     public function init()  {
         if ($this->dataProvider instanceof DataProviderInterface)    {
             $this->messages = array_map(function($model) {
-                $text = $this->prepareBody(Html::getAttributeValue($model, $this->bodyAttribute));
-                $url = Html::getAttributeValue($model, $this->urlAttribute);
+                if (is_array($model)) {
+                    $text = $this->prepareBody($model[$this->bodyAttribute]);
+                    $url = $model[$this->urlAttribute];
+                    $style = $model[$this->styleAttribute];
+
+                } else {
+                    $text = $this->prepareBody(Html::getAttributeValue($model, $this->bodyAttribute));
+                    $url = Html::getAttributeValue($model, $this->urlAttribute);
+                    $style = Html::getAttributeValue($model, $this->styleAttribute);
+                };                                
+                
                 if (! empty($url)) $text = Html::a($text, $url);
                 $r = [
                     'content' => $text
                 ];
-                $style = Html::getAttributeValue($model, $this->styleAttribute);
                 if (! empty($style)) $r['class'] = $this->stylePrefix . $style;
                 return $r;
             }, $this->dataProvider->getModels());
