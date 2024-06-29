@@ -20,7 +20,7 @@ class TelexAsset extends AssetBundle {
 //    public $sourcePath = '@bower/telex/dist';
     public $baseUrl = '//unpkg.com/@sjaakp/telex/dist';
 
-//    public $publishOptions = [
-//        'forceCopy' => YII_DEBUG
-//    ];
+    public $publishOptions = [
+        'forceCopy' => YII_DEBUG
+    ];
 }
